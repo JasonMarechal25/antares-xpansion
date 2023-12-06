@@ -67,6 +67,7 @@ void RunProblemGeneration(
   (*logger)(LogUtils::LOGLEVEL::INFO)
       << "Launching Problem Generation" << std::endl;
   std::cout << "plop" << std::endl;
+  std::cout << "plop" << std::endl;
   Timer problem_generation_timer;
   if (!weights_file.empty()) {
     ProcessWeights(xpansion_output_dir, antares_archive_path, weights_file,
