@@ -8,7 +8,7 @@
     {
       "kind": "git",
       "repository": "https://github.com/AntaresSimulatorTeam/antares-vcpkg-registry",
-      "baseline": "3fa279503f88d764778bcaacdacd3aa27e323025",
+      "baseline": "36b5a2b1a21a623e8b1ea8605185db6bb23f761e",
       "packages": [
         "coin-or-cbc",
         "coin-or-cgl",
