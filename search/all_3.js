@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['3_200_2005_202021_0',['v0.3.0 (05/2021)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md61',1,'']]],
-  ['3_200_2006_202024_1',['v1.3.0 (06/2024)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md20',1,'']]],
-  ['3_2002_202023_2',['v1.0.3 (02/2023)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md33',1,'']]],
-  ['3_201_2007_202024_3',['v1.3.1 (07/2024)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md16',1,'']]],
-  ['3_202_2007_202024_4',['v1.3.2 (07/2024)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md14',1,'']]],
-  ['3_20read_20additional_20candidate_20constraints_5',['3- Read additional candidate constraints',['../md_docs_2developer-guide_2xpansion__steps_22-problem-modification.html#autotoc_md125',1,'']]],
-  ['3_20resolution_20stage_20with_20benders_20decomposition_3a_20tt_20benders_20tt_6',['3- Resolution stage with Benders decomposition: &lt;tt&gt;benders&lt;/tt&gt;',['../md_docs_2developer-guide_2xpansion__steps_20-overview.html#autotoc_md108',1,'']]]
+  ['2_200_2004_202021_0',['v0.2.0 (04/2021)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md81',1,'']]],
+  ['2_2001_202023_1',['v1.0.2 (01/2023)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md53',1,'']]],
+  ['2_2002_202024_2',['v1.2.2 (02/2024)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md41',1,'']]],
+  ['2_2007_202024_3',['v1.3.2 (07/2024)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md31',1,'']]],
+  ['2_2010_202023_4',['v1.2 (10/2023)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md42',1,'']]],
+  ['2_202_2002_202024_5',['v1.2.2 (02/2024)',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md41',1,'']]],
+  ['2_20investment_20problem_20generation_3a_20tt_20problem_5fgeneration_20tt_6',['2- Investment problem generation: &lt;tt&gt;problem_generation&lt;/tt&gt;',['../md_docs_2developer-guide_2xpansion__steps_20-overview.html#autotoc_md125',1,'']]],
+  ['2_20modification_20of_20mps_20file_7',['2- Modification of .mps file',['../md_docs_2developer-guide_2xpansion__steps_22-problem-modification.html#autotoc_md140',1,'']]],
+  ['2021_8',['2021',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md84',1,'v0.1.0 (03/2021)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md81',1,'v0.2.0 (04/2021)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md78',1,'v0.3.0 (05/2021)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md75',1,'v0.4.0 (07/2021)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md71',1,'v0.5.0 (10/2021)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md67',1,'v0.6.0 (12/2021)']]],
+  ['2022_9',['2022',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md63',1,'v0.7.0 (06/2022)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md60',1,'v0.8.0 (10/2022)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md57',1,'v1.0.0 (12/2022)']]],
+  ['2023_10',['2023',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md55',1,'v1.0.1 (01/2023)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md53',1,'v1.0.2 (01/2023)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md50',1,'v1.0.3 (02/2023)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md47',1,'v1.1.0 (09/2023)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md45',1,'v1.1.1 (09/2023)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md42',1,'v1.2 (10/2023)']]],
+  ['2024_11',['2024',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md41',1,'v1.2.2 (02/2024)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md37',1,'v1.3.0 (06/2024)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md33',1,'v1.3.1 (07/2024)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md31',1,'v1.3.2 (07/2024)']]],
+  ['2025_12',['2025',['../md_docs_2changelog_2CHANGELOG.html#autotoc_md26',1,'v1.4.0 (07/2025)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md23',1,'v1.5.0 (07/2025)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md19',1,'v1.6.0 (10/2025)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md17',1,'v1.6.1 (11/2025)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md13',1,'v1.7.0 (11/2025)'],['../md_docs_2changelog_2CHANGELOG.html#autotoc_md10',1,'v1.7.1 (12/2025)']]]
 ];

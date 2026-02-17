@@ -28,7 +28,8 @@ var annotated_dup =
       ] ],
       [ "config_loader", "namespaceantares__xpansion_1_1config__loader.html", [
         [ "ConfigLoader", "classantares__xpansion_1_1config__loader_1_1ConfigLoader.html", "classantares__xpansion_1_1config__loader_1_1ConfigLoader" ],
-        [ "NTCColumnConstraintError", "classantares__xpansion_1_1config__loader_1_1NTCColumnConstraintError.html", null ]
+        [ "NTCColumnConstraintError", "classantares__xpansion_1_1config__loader_1_1NTCColumnConstraintError.html", null ],
+        [ "XpansionSettingsReader", "classantares__xpansion_1_1config__loader_1_1XpansionSettingsReader.html", "classantares__xpansion_1_1config__loader_1_1XpansionSettingsReader" ]
       ] ],
       [ "driver", "namespaceantares__xpansion_1_1driver.html", [
         [ "XpansionDriver", "classantares__xpansion_1_1driver_1_1XpansionDriver.html", "classantares__xpansion_1_1driver_1_1XpansionDriver" ]
@@ -53,7 +54,6 @@ var annotated_dup =
         [ "EmptyCandidateLink", "classantares__xpansion_1_1input__checker_1_1EmptyCandidateLink.html", null ],
         [ "EmptyCandidateName", "classantares__xpansion_1_1input__checker_1_1EmptyCandidateName.html", null ],
         [ "ExpertLogsValueError", "classantares__xpansion_1_1input__checker_1_1ExpertLogsValueError.html", null ],
-        [ "GapValueError", "classantares__xpansion_1_1input__checker_1_1GapValueError.html", null ],
         [ "IllegalCharsInCandidateName", "classantares__xpansion_1_1input__checker_1_1IllegalCharsInCandidateName.html", null ],
         [ "LogLevelValueError", "classantares__xpansion_1_1input__checker_1_1LogLevelValueError.html", null ],
         [ "MaxIterValueError", "classantares__xpansion_1_1input__checker_1_1MaxIterValueError.html", null ],
@@ -62,6 +62,7 @@ var annotated_dup =
         [ "NotHandledOption", "classantares__xpansion_1_1input__checker_1_1NotHandledOption.html", null ],
         [ "NotHandledValue", "classantares__xpansion_1_1input__checker_1_1NotHandledValue.html", null ],
         [ "OptionTypeError", "classantares__xpansion_1_1input__checker_1_1OptionTypeError.html", null ],
+        [ "PositiveFloatValueError", "classantares__xpansion_1_1input__checker_1_1PositiveFloatValueError.html", null ],
         [ "ProfileFileNegativeValue", "classantares__xpansion_1_1input__checker_1_1ProfileFileNegativeValue.html", null ],
         [ "ProfileFileNotExists", "classantares__xpansion_1_1input__checker_1_1ProfileFileNotExists.html", null ],
         [ "ProfileFileValueError", "classantares__xpansion_1_1input__checker_1_1ProfileFileValueError.html", null ],
@@ -85,6 +86,10 @@ var annotated_dup =
       ] ],
       [ "optimisation_keys", null, [
         [ "OptimisationKeys", "classantares__xpansion_1_1optimisation__keys_1_1OptimisationKeys.html", null ]
+      ] ],
+      [ "presolve_driver", "namespaceantares__xpansion_1_1presolve__driver.html", [
+        [ "PresolveData", "classantares__xpansion_1_1presolve__driver_1_1PresolveData.html", null ],
+        [ "PresolveDriver", "classantares__xpansion_1_1presolve__driver_1_1PresolveDriver.html", "classantares__xpansion_1_1presolve__driver_1_1PresolveDriver" ]
       ] ],
       [ "problem_generator_driver", "namespaceantares__xpansion_1_1problem__generator__driver.html", [
         [ "ProblemGeneratorData", "classantares__xpansion_1_1problem__generator__driver_1_1ProblemGeneratorData.html", null ],
@@ -118,11 +123,17 @@ var annotated_dup =
       [ "xpansionConfig", "namespaceantares__xpansion_1_1xpansionConfig.html", [
         [ "ConfigParameters", "classantares__xpansion_1_1xpansionConfig_1_1ConfigParameters.html", null ],
         [ "InputParameters", "classantares__xpansion_1_1xpansionConfig_1_1InputParameters.html", null ],
-        [ "XpansionConfig", "classantares__xpansion_1_1xpansionConfig_1_1XpansionConfig.html", null ]
+        [ "XpansionConfig", "classantares__xpansion_1_1xpansionConfig_1_1XpansionConfig.html", null ],
+        [ "XpansionConfigConstants", "classantares__xpansion_1_1xpansionConfig_1_1XpansionConfigConstants.html", null ]
       ] ],
       [ "yearly_weight_writer", null, [
         [ "YearlyWeightWriter", "classantares__xpansion_1_1yearly__weight__writer_1_1YearlyWeightWriter.html", null ]
       ] ]
+    ] ],
+    [ "args_parser_trajectory", null, [
+      [ "TrajectoryArgsParser", "classargs__parser__trajectory_1_1TrajectoryArgsParser.html", "classargs__parser__trajectory_1_1TrajectoryArgsParser" ],
+      [ "TrajectoryLauncherOptionsDefaultValues", "classargs__parser__trajectory_1_1TrajectoryLauncherOptionsDefaultValues.html", null ],
+      [ "TrajectoryLauncherOptionsKeys", "classargs__parser__trajectory_1_1TrajectoryLauncherOptionsKeys.html", null ]
     ] ],
     [ "Benders", null, [
       [ "Criterion", null, [
@@ -143,166 +154,27 @@ var annotated_dup =
       ] ],
       [ "StartUp", "classBenders_1_1StartUp.html", null ]
     ] ],
-    [ "Catch", null, [
-      [ "Detail", null, [
-        [ "Approx", "classCatch_1_1Detail_1_1Approx.html", null ],
-        [ "EnumInfo", "structCatch_1_1Detail_1_1EnumInfo.html", null ],
-        [ "IsStreamInsertable", "classCatch_1_1Detail_1_1IsStreamInsertable.html", null ]
-      ] ],
-      [ "detail", null, [
-        [ "is_range_impl", "structCatch_1_1detail_1_1is__range__impl.html", null ],
-        [ "is_range_impl< T, typename void_type< decltype(begin(std::declval< T >()))>::type >", "structCatch_1_1detail_1_1is__range__impl_3_01T_00_01typename_01void__type_3_01decltype_07begin_0efe009a05f00a00c1e4e06989d122a22.html", null ],
-        [ "void_type", "structCatch_1_1detail_1_1void__type.html", null ]
-      ] ],
-      [ "Generators", null, [
-        [ "as", "structCatch_1_1Generators_1_1as.html", null ],
-        [ "ChunkGenerator", "classCatch_1_1Generators_1_1ChunkGenerator.html", null ],
-        [ "FilterGenerator", "classCatch_1_1Generators_1_1FilterGenerator.html", null ],
-        [ "FixedValuesGenerator", "classCatch_1_1Generators_1_1FixedValuesGenerator.html", null ],
-        [ "Generators", "classCatch_1_1Generators_1_1Generators.html", null ],
-        [ "GeneratorUntypedBase", "classCatch_1_1Generators_1_1GeneratorUntypedBase.html", null ],
-        [ "GeneratorWrapper", "classCatch_1_1Generators_1_1GeneratorWrapper.html", null ],
-        [ "IGenerator", "structCatch_1_1Generators_1_1IGenerator.html", null ],
-        [ "IteratorGenerator", "classCatch_1_1Generators_1_1IteratorGenerator.html", null ],
-        [ "MapGenerator", "classCatch_1_1Generators_1_1MapGenerator.html", null ],
-        [ "RandomFloatingGenerator", "classCatch_1_1Generators_1_1RandomFloatingGenerator.html", null ],
-        [ "RandomIntegerGenerator", "classCatch_1_1Generators_1_1RandomIntegerGenerator.html", null ],
-        [ "RangeGenerator", "classCatch_1_1Generators_1_1RangeGenerator.html", null ],
-        [ "RepeatGenerator", "classCatch_1_1Generators_1_1RepeatGenerator.html", null ],
-        [ "SingleValueGenerator", "classCatch_1_1Generators_1_1SingleValueGenerator.html", null ],
-        [ "TakeGenerator", "classCatch_1_1Generators_1_1TakeGenerator.html", null ]
-      ] ],
-      [ "Matchers", null, [
-        [ "Exception", null, [
-          [ "ExceptionMessageMatcher", "classCatch_1_1Matchers_1_1Exception_1_1ExceptionMessageMatcher.html", null ]
-        ] ],
-        [ "Floating", null, [
-          [ "WithinAbsMatcher", "structCatch_1_1Matchers_1_1Floating_1_1WithinAbsMatcher.html", null ],
-          [ "WithinRelMatcher", "structCatch_1_1Matchers_1_1Floating_1_1WithinRelMatcher.html", null ],
-          [ "WithinUlpsMatcher", "structCatch_1_1Matchers_1_1Floating_1_1WithinUlpsMatcher.html", null ]
-        ] ],
-        [ "Generic", null, [
-          [ "PredicateMatcher", "classCatch_1_1Matchers_1_1Generic_1_1PredicateMatcher.html", null ]
-        ] ],
-        [ "Impl", null, [
-          [ "MatchAllOf", "structCatch_1_1Matchers_1_1Impl_1_1MatchAllOf.html", null ],
-          [ "MatchAnyOf", "structCatch_1_1Matchers_1_1Impl_1_1MatchAnyOf.html", null ],
-          [ "MatcherBase", "structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html", null ],
-          [ "MatcherMethod", "structCatch_1_1Matchers_1_1Impl_1_1MatcherMethod.html", null ],
-          [ "MatcherUntypedBase", "classCatch_1_1Matchers_1_1Impl_1_1MatcherUntypedBase.html", null ],
-          [ "MatchNotOf", "structCatch_1_1Matchers_1_1Impl_1_1MatchNotOf.html", null ]
-        ] ],
-        [ "StdString", null, [
-          [ "CasedString", "structCatch_1_1Matchers_1_1StdString_1_1CasedString.html", null ],
-          [ "ContainsMatcher", "structCatch_1_1Matchers_1_1StdString_1_1ContainsMatcher.html", null ],
-          [ "EndsWithMatcher", "structCatch_1_1Matchers_1_1StdString_1_1EndsWithMatcher.html", null ],
-          [ "EqualsMatcher", "structCatch_1_1Matchers_1_1StdString_1_1EqualsMatcher.html", null ],
-          [ "RegexMatcher", "structCatch_1_1Matchers_1_1StdString_1_1RegexMatcher.html", null ],
-          [ "StartsWithMatcher", "structCatch_1_1Matchers_1_1StdString_1_1StartsWithMatcher.html", null ],
-          [ "StringMatcherBase", "structCatch_1_1Matchers_1_1StdString_1_1StringMatcherBase.html", null ]
-        ] ],
-        [ "Vector", null, [
-          [ "ApproxMatcher", "structCatch_1_1Matchers_1_1Vector_1_1ApproxMatcher.html", null ],
-          [ "ContainsElementMatcher", "structCatch_1_1Matchers_1_1Vector_1_1ContainsElementMatcher.html", null ],
-          [ "ContainsMatcher", "structCatch_1_1Matchers_1_1Vector_1_1ContainsMatcher.html", null ],
-          [ "EqualsMatcher", "structCatch_1_1Matchers_1_1Vector_1_1EqualsMatcher.html", null ],
-          [ "UnorderedEqualsMatcher", "structCatch_1_1Matchers_1_1Vector_1_1UnorderedEqualsMatcher.html", null ]
-        ] ]
-      ] ],
-      [ "always_false", "structCatch_1_1always__false.html", null ],
-      [ "AssertionHandler", "classCatch_1_1AssertionHandler.html", null ],
-      [ "AssertionInfo", "structCatch_1_1AssertionInfo.html", null ],
-      [ "AssertionReaction", "structCatch_1_1AssertionReaction.html", null ],
-      [ "AutoReg", "structCatch_1_1AutoReg.html", null ],
-      [ "BinaryExpr", "classCatch_1_1BinaryExpr.html", null ],
-      [ "Capturer", "classCatch_1_1Capturer.html", null ],
-      [ "CaseSensitive", "structCatch_1_1CaseSensitive.html", null ],
-      [ "Counts", "structCatch_1_1Counts.html", null ],
-      [ "Decomposer", "structCatch_1_1Decomposer.html", null ],
-      [ "ExceptionTranslatorRegistrar", "classCatch_1_1ExceptionTranslatorRegistrar.html", null ],
-      [ "ExprLhs", "classCatch_1_1ExprLhs.html", null ],
-      [ "GeneratorException", "classCatch_1_1GeneratorException.html", null ],
-      [ "IConfig", "structCatch_1_1IConfig.html", null ],
-      [ "IContext", "structCatch_1_1IContext.html", null ],
-      [ "IExceptionTranslator", "structCatch_1_1IExceptionTranslator.html", null ],
-      [ "IExceptionTranslatorRegistry", "structCatch_1_1IExceptionTranslatorRegistry.html", null ],
-      [ "IGeneratorTracker", "structCatch_1_1IGeneratorTracker.html", null ],
-      [ "IMutableContext", "structCatch_1_1IMutableContext.html", null ],
-      [ "IMutableEnumValuesRegistry", "structCatch_1_1IMutableEnumValuesRegistry.html", null ],
-      [ "IMutableRegistryHub", "structCatch_1_1IMutableRegistryHub.html", null ],
-      [ "IRegistryHub", "structCatch_1_1IRegistryHub.html", null ],
-      [ "IResultCapture", "structCatch_1_1IResultCapture.html", null ],
-      [ "IRunner", "structCatch_1_1IRunner.html", null ],
-      [ "is_callable", "structCatch_1_1is__callable.html", null ],
-      [ "is_callable< Fun(Args...)>", "structCatch_1_1is__callable_3_01Fun_07Args_8_8_8_08_4.html", null ],
-      [ "is_callable_tester", "structCatch_1_1is__callable__tester.html", null ],
-      [ "is_range", "structCatch_1_1is__range.html", null ],
-      [ "IStream", "structCatch_1_1IStream.html", null ],
-      [ "ITestCaseRegistry", "structCatch_1_1ITestCaseRegistry.html", null ],
-      [ "ITestInvoker", "structCatch_1_1ITestInvoker.html", null ],
-      [ "ITransientExpression", "structCatch_1_1ITransientExpression.html", null ],
-      [ "LazyExpression", "classCatch_1_1LazyExpression.html", null ],
-      [ "MatchExpr", "classCatch_1_1MatchExpr.html", null ],
-      [ "MessageBuilder", "structCatch_1_1MessageBuilder.html", null ],
-      [ "MessageInfo", "structCatch_1_1MessageInfo.html", null ],
-      [ "MessageStream", "structCatch_1_1MessageStream.html", null ],
-      [ "NameAndTags", "structCatch_1_1NameAndTags.html", null ],
-      [ "NonCopyable", "classCatch_1_1NonCopyable.html", null ],
-      [ "Option", "classCatch_1_1Option.html", null ],
-      [ "pluralise", "structCatch_1_1pluralise.html", null ],
-      [ "RegistrarForTagAliases", "structCatch_1_1RegistrarForTagAliases.html", null ],
-      [ "ResultDisposition", "structCatch_1_1ResultDisposition.html", null ],
-      [ "ResultWas", "structCatch_1_1ResultWas.html", null ],
-      [ "ReusableStringStream", "classCatch_1_1ReusableStringStream.html", null ],
-      [ "RunTests", "structCatch_1_1RunTests.html", null ],
-      [ "ScopedMessage", "classCatch_1_1ScopedMessage.html", null ],
-      [ "Section", "classCatch_1_1Section.html", null ],
-      [ "SectionEndInfo", "structCatch_1_1SectionEndInfo.html", null ],
-      [ "SectionInfo", "structCatch_1_1SectionInfo.html", null ],
-      [ "ShowDurations", "structCatch_1_1ShowDurations.html", null ],
-      [ "SimplePcg32", "classCatch_1_1SimplePcg32.html", null ],
-      [ "SourceLineInfo", "structCatch_1_1SourceLineInfo.html", null ],
-      [ "StreamEndStop", "structCatch_1_1StreamEndStop.html", null ],
-      [ "StringMaker", "structCatch_1_1StringMaker.html", null ],
-      [ "StringMaker< bool >", "structCatch_1_1StringMaker_3_01bool_01_4.html", null ],
-      [ "StringMaker< Catch::Detail::Approx >", "structCatch_1_1StringMaker_3_01Catch_1_1Detail_1_1Approx_01_4.html", null ],
-      [ "StringMaker< char * >", "structCatch_1_1StringMaker_3_01char_01_5_01_4.html", null ],
-      [ "StringMaker< char >", "structCatch_1_1StringMaker_3_01char_01_4.html", null ],
-      [ "StringMaker< char const * >", "structCatch_1_1StringMaker_3_01char_01const_01_5_01_4.html", null ],
-      [ "StringMaker< char[SZ]>", "structCatch_1_1StringMaker_3_01char_0fSZ_0e_4.html", null ],
-      [ "StringMaker< double >", "structCatch_1_1StringMaker_3_01double_01_4.html", null ],
-      [ "StringMaker< float >", "structCatch_1_1StringMaker_3_01float_01_4.html", null ],
-      [ "StringMaker< int >", "structCatch_1_1StringMaker_3_01int_01_4.html", null ],
-      [ "StringMaker< long >", "structCatch_1_1StringMaker_3_01long_01_4.html", null ],
-      [ "StringMaker< long long >", "structCatch_1_1StringMaker_3_01long_01long_01_4.html", null ],
-      [ "StringMaker< R C::* >", "structCatch_1_1StringMaker_3_01R_01C_1_1_5_01_4.html", null ],
-      [ "StringMaker< R, typename std::enable_if< is_range< R >::value &&!::Catch::Detail::IsStreamInsertable< R >::value >::type >", "structCatch_1_1StringMaker_3_01R_00_01typename_01std_1_1enable__if_3_01is__range_3_01R_01_4_1_1ve8233c20b54b69b4771fbd413409d181.html", null ],
-      [ "StringMaker< signed char >", "structCatch_1_1StringMaker_3_01signed_01char_01_4.html", null ],
-      [ "StringMaker< signed char[SZ]>", "structCatch_1_1StringMaker_3_01signed_01char_0fSZ_0e_4.html", null ],
-      [ "StringMaker< std::nullptr_t >", "structCatch_1_1StringMaker_3_01std_1_1nullptr__t_01_4.html", null ],
-      [ "StringMaker< std::string >", "structCatch_1_1StringMaker_3_01std_1_1string_01_4.html", null ],
-      [ "StringMaker< std::wstring >", "structCatch_1_1StringMaker_3_01std_1_1wstring_01_4.html", null ],
-      [ "StringMaker< T * >", "structCatch_1_1StringMaker_3_01T_01_5_01_4.html", null ],
-      [ "StringMaker< T[SZ]>", "structCatch_1_1StringMaker_3_01T_0fSZ_0e_4.html", null ],
-      [ "StringMaker< unsigned char >", "structCatch_1_1StringMaker_3_01unsigned_01char_01_4.html", null ],
-      [ "StringMaker< unsigned char[SZ]>", "structCatch_1_1StringMaker_3_01unsigned_01char_0fSZ_0e_4.html", null ],
-      [ "StringMaker< unsigned int >", "structCatch_1_1StringMaker_3_01unsigned_01int_01_4.html", null ],
-      [ "StringMaker< unsigned long >", "structCatch_1_1StringMaker_3_01unsigned_01long_01_4.html", null ],
-      [ "StringMaker< unsigned long long >", "structCatch_1_1StringMaker_3_01unsigned_01long_01long_01_4.html", null ],
-      [ "StringMaker< wchar_t * >", "structCatch_1_1StringMaker_3_01wchar__t_01_5_01_4.html", null ],
-      [ "StringMaker< wchar_t const * >", "structCatch_1_1StringMaker_3_01wchar__t_01const_01_5_01_4.html", null ],
-      [ "StringRef", "classCatch_1_1StringRef.html", null ],
-      [ "TestCase", "classCatch_1_1TestCase.html", null ],
-      [ "TestCaseInfo", "structCatch_1_1TestCaseInfo.html", null ],
-      [ "TestFailureException", "structCatch_1_1TestFailureException.html", null ],
-      [ "TestInvokerAsMethod", "classCatch_1_1TestInvokerAsMethod.html", null ],
-      [ "Timer", "classCatch_1_1Timer.html", null ],
-      [ "Totals", "structCatch_1_1Totals.html", null ],
-      [ "true_given", "structCatch_1_1true__given.html", null ],
-      [ "UnaryExpr", "classCatch_1_1UnaryExpr.html", null ],
-      [ "UseColour", "structCatch_1_1UseColour.html", null ],
-      [ "WaitForKeypress", "structCatch_1_1WaitForKeypress.html", null ],
-      [ "WarnAbout", "structCatch_1_1WarnAbout.html", null ]
+    [ "driver_input_translation", null, [
+      [ "InputTranslationDriver", "classdriver__input__translation_1_1InputTranslationDriver.html", "classdriver__input__translation_1_1InputTranslationDriver" ]
+    ] ],
+    [ "driver_merge_master", null, [
+      [ "MergeMasterData", "classdriver__merge__master_1_1MergeMasterData.html", null ],
+      [ "MergeMasterDriver", "classdriver__merge__master_1_1MergeMasterDriver.html", "classdriver__merge__master_1_1MergeMasterDriver" ]
+    ] ],
+    [ "driver_merge_weights", null, [
+      [ "MergeWeightsData", "classdriver__merge__weights_1_1MergeWeightsData.html", null ],
+      [ "MergeWeightsDriver", "classdriver__merge__weights_1_1MergeWeightsDriver.html", "classdriver__merge__weights_1_1MergeWeightsDriver" ]
+    ] ],
+    [ "driver_multiple_problem_gen", null, [
+      [ "MultipleProblemGenerationData", "classdriver__multiple__problem__gen_1_1MultipleProblemGenerationData.html", null ],
+      [ "MultipleProblemGenerationDriver", "classdriver__multiple__problem__gen_1_1MultipleProblemGenerationDriver.html", "classdriver__multiple__problem__gen_1_1MultipleProblemGenerationDriver" ]
+    ] ],
+    [ "driver_resolution", null, [
+      [ "TrajectoryResolutionData", "classdriver__resolution_1_1TrajectoryResolutionData.html", null ],
+      [ "TrajectoryResolutionDriver", "classdriver__resolution_1_1TrajectoryResolutionDriver.html", "classdriver__resolution_1_1TrajectoryResolutionDriver" ]
+    ] ],
+    [ "driver_trajectory", "namespacedriver__trajectory.html", [
+      [ "TrajectoryInvestmentDriver", "classdriver__trajectory_1_1TrajectoryInvestmentDriver.html", "classdriver__trajectory_1_1TrajectoryInvestmentDriver" ]
     ] ],
     [ "fmt", null, [
       [ "formatter< ProblemsFormat >", "structfmt_1_1formatter_3_01ProblemsFormat_01_4.html", null ]
@@ -356,6 +228,15 @@ var annotated_dup =
     ] ],
     [ "tests", null, [
       [ "end_to_end", null, [
+        [ "cucumber", null, [
+          [ "features", null, [
+            [ "steps", null, [
+              [ "then", null, [
+                [ "SubProblemStats", "classtests_1_1end__to__end_1_1cucumber_1_1features_1_1steps_1_1then_1_1SubProblemStats.html", null ]
+              ] ]
+            ] ]
+          ] ]
+        ] ],
         [ "examples", null, [
           [ "example_test", null, [
             [ "BendersMethod", "classtests_1_1end__to__end_1_1examples_1_1example__test_1_1BendersMethod.html", null ]
@@ -431,8 +312,33 @@ var annotated_dup =
         ] ],
         [ "test_study_updater", null, [
           [ "TestStudyUpdater", "classtests_1_1python_1_1test__study__updater_1_1TestStudyUpdater.html", null ]
+        ] ],
+        [ "test_trajectory_cleanup", null, [
+          [ "TestTrajectoryCleanup", "classtests_1_1python_1_1test__trajectory__cleanup_1_1TestTrajectoryCleanup.html", "classtests_1_1python_1_1test__trajectory__cleanup_1_1TestTrajectoryCleanup" ]
         ] ]
       ] ]
+    ] ],
+    [ "trajectory_config", null, [
+      [ "TrajectoryConfig", "classtrajectory__config_1_1TrajectoryConfig.html", null ],
+      [ "TrajectoryConfigDefaults", "classtrajectory__config_1_1TrajectoryConfigDefaults.html", null ],
+      [ "TrajectoryInputParameters", "classtrajectory__config_1_1TrajectoryInputParameters.html", null ]
+    ] ],
+    [ "user_input_keys", null, [
+      [ "TrajectoryInputKeys", "classuser__input__keys_1_1TrajectoryInputKeys.html", null ],
+      [ "TrajectoryOuputKeys", "classuser__input__keys_1_1TrajectoryOuputKeys.html", null ]
+    ] ],
+    [ "user_input_translation", null, [
+      [ "CandidateType", "classuser__input__translation_1_1CandidateType.html", null ],
+      [ "ConstraintOperatorEnum", "classuser__input__translation_1_1ConstraintOperatorEnum.html", null ],
+      [ "ConstraintTypeEnum", "classuser__input__translation_1_1ConstraintTypeEnum.html", null ],
+      [ "FormulationEnum", "classuser__input__translation_1_1FormulationEnum.html", null ],
+      [ "GlobalData", "classuser__input__translation_1_1GlobalData.html", null ],
+      [ "InvestmentVariableTypeEnum", "classuser__input__translation_1_1InvestmentVariableTypeEnum.html", null ],
+      [ "NodeData", "classuser__input__translation_1_1NodeData.html", null ],
+      [ "TrajectoryConstraint", "classuser__input__translation_1_1TrajectoryConstraint.html", "classuser__input__translation_1_1TrajectoryConstraint" ],
+      [ "TrajectoryInputFile", "classuser__input__translation_1_1TrajectoryInputFile.html", null ],
+      [ "Tree", "classuser__input__translation_1_1Tree.html", null ],
+      [ "UserInputTranslator", "classuser__input__translation_1_1UserInputTranslator.html", "classuser__input__translation_1_1UserInputTranslator" ]
     ] ],
     [ "Xpansion", null, [
       [ "Test", null, [
@@ -454,6 +360,7 @@ var annotated_dup =
       [ "convert< CriterionSingleInputData >", "classYAML_1_1convert_3_01CriterionSingleInputData_01_4.html", null ],
       [ "convert< OuterLoopCriterionInputData >", "classYAML_1_1convert_3_01OuterLoopCriterionInputData_01_4.html", null ]
     ] ],
+    [ "AbstractMergeMPS", "classAbstractMergeMPS.html", "classAbstractMergeMPS" ],
     [ "act", "classact.html", null ],
     [ "ActiveLink", "classActiveLink.html", null ],
     [ "ActiveLinksBuilder", "classActiveLinksBuilder.html", "classActiveLinksBuilder" ],
@@ -466,7 +373,6 @@ var annotated_dup =
     [ "AntaresArchiveUpdater", "classAntaresArchiveUpdater.html", null ],
     [ "AntaresArchiveUpdaterExeOptions", "classAntaresArchiveUpdaterExeOptions.html", null ],
     [ "AntaresLinkDataReader", "classAntaresLinkDataReader.html", null ],
-    [ "AntaresProblemToXpansionProblemTranslator", "classAntaresProblemToXpansionProblemTranslator.html", null ],
     [ "AntaresVersionProvider", "classAntaresVersionProvider.html", null ],
     [ "AntaresVersionProviderStub", "classAntaresVersionProviderStub.html", null ],
     [ "ArchiveIO", "classArchiveIO.html", null ],
@@ -484,12 +390,16 @@ var annotated_dup =
     [ "Batch", "structBatch.html", null ],
     [ "BatchCollection", "classBatchCollection.html", null ],
     [ "BatchCollectionTest", "classBatchCollectionTest.html", null ],
+    [ "BendersApp", "classBendersApp.html", null ],
     [ "BendersBase", "classBendersBase.html", "classBendersBase" ],
+    [ "BendersBaseDouble", "classBendersBaseDouble.html", "classBendersBaseDouble" ],
     [ "BendersBaseOptions", "structBendersBaseOptions.html", null ],
+    [ "BendersBaseTest", "classBendersBaseTest.html", null ],
     [ "BendersByBatch", "classBendersByBatch.html", "classBendersByBatch" ],
+    [ "BendersFactory", "classBendersFactory.html", "classBendersFactory" ],
     [ "BendersLoggerBase", "structBendersLoggerBase.html", "structBendersLoggerBase" ],
-    [ "BendersMainFactory", "classBendersMainFactory.html", null ],
     [ "BendersMpi", "classBendersMpi.html", "classBendersMpi" ],
+    [ "BendersProblemFromFile", "classBendersProblemFromFile.html", null ],
     [ "BendersRelevantIterationsData", "structBendersRelevantIterationsData.html", null ],
     [ "BendersSequential", "classBendersSequential.html", "classBendersSequential" ],
     [ "BendersSequentialDouble", "classBendersSequentialDouble.html", "classBendersSequentialDouble" ],
@@ -500,18 +410,20 @@ var annotated_dup =
     [ "CandidateData", "structCandidateData.html", null ],
     [ "CandidatesINIReader", "classCandidatesINIReader.html", "classCandidatesINIReader" ],
     [ "CandidatesINIReaderTest", "classCandidatesINIReaderTest.html", null ],
-    [ "Catch_global_namespace_dummy", "structCatch__global__namespace__dummy.html", null ],
     [ "ChronicleProviderTest", "classChronicleProviderTest.html", null ],
     [ "ChronicleTest", "classChronicleTest.html", null ],
     [ "class", "classclass.html", null ],
     [ "Clock", "classClock.html", null ],
     [ "ClockMock", "classClockMock.html", null ],
     [ "ColumnToChange", "structColumnToChange.html", null ],
+    [ "ConfigurationManager", "classConfigurationManager.html", "classConfigurationManager" ],
     [ "CouplingMapGenerator", "classCouplingMapGenerator.html", null ],
+    [ "CreateFixture", "classCreateFixture.html", null ],
     [ "CriteriaCurrentIterationData", "structCriteriaCurrentIterationData.html", null ],
     [ "CurrentIterationData", "structCurrentIterationData.html", null ],
     [ "DirectAccessScenarioToChronicleProvider", "classDirectAccessScenarioToChronicleProvider.html", null ],
     [ "EmptyLogger", "structEmptyLogger.html", "structEmptyLogger" ],
+    [ "EmptyLogManager", "classEmptyLogManager.html", null ],
     [ "ExternalLoopOptions", "structExternalLoopOptions.html", null ],
     [ "FileAndStdoutLoggerFactory", "classFileAndStdoutLoggerFactory.html", null ],
     [ "FileBuffer", "structFileBuffer.html", null ],
@@ -521,6 +433,7 @@ var annotated_dup =
     [ "FileProblemsProviderAdapter", "classFileProblemsProviderAdapter.html", null ],
     [ "FilesMapper", "classFilesMapper.html", null ],
     [ "FileWriter", "classFileWriter.html", null ],
+    [ "FixtureMPSFileProblemProviderAdapter", "classFixtureMPSFileProblemProviderAdapter.html", null ],
     [ "FullRunOptionsParser", "classFullRunOptionsParser.html", null ],
     [ "FullRunOptionsParserTest", "classFullRunOptionsParserTest.html", null ],
     [ "FullRunOptionsParserTestFullPath", "classFullRunOptionsParserTestFullPath.html", null ],
@@ -530,7 +443,9 @@ var annotated_dup =
     [ "GenericSolverException", "classGenericSolverException.html", null ],
     [ "HeadersManager", "structHeadersManager.html", null ],
     [ "HeadersManagerExternalLoop", "structHeadersManagerExternalLoop.html", null ],
+    [ "IBendersProblemProvider", "classIBendersProblemProvider.html", null ],
     [ "ILogger", "classILogger.html", "classILogger" ],
+    [ "ILoggerMock", "structILoggerMock.html", "structILoggerMock" ],
     [ "ILoggerXpansion", "structILoggerXpansion.html", "structILoggerXpansion" ],
     [ "IniFileNotFound", "classIniFileNotFound.html", null ],
     [ "INIReader", "classINIReader.html", null ],
@@ -540,6 +455,7 @@ var annotated_dup =
     [ "InvalidBoundTypeException", "classInvalidBoundTypeException.html", null ],
     [ "InvalidColSizeException", "classInvalidColSizeException.html", null ],
     [ "InvalidColTypeException", "classInvalidColTypeException.html", null ],
+    [ "InvalidMasterStructureFileException", "classInvalidMasterStructureFileException.html", null ],
     [ "InvalidRowSizeException", "classInvalidRowSizeException.html", null ],
     [ "InvalidSolverForCopyException", "classInvalidSolverForCopyException.html", null ],
     [ "InvalidSolverNameException", "classInvalidSolverNameException.html", null ],
@@ -589,13 +505,21 @@ var annotated_dup =
     [ "MathLoggerFile", "classMathLoggerFile.html", "classMathLoggerFile" ],
     [ "MathLoggerImplementation", "classMathLoggerImplementation.html", "classMathLoggerImplementation" ],
     [ "MathLoggerOstream", "classMathLoggerOstream.html", null ],
-    [ "MergeMPS", "classMergeMPS.html", "classMergeMPS" ],
+    [ "MergeMasterSubproblemMPS", "classMergeMasterSubproblemMPS.html", "classMergeMasterSubproblemMPS" ],
+    [ "MergeMasterTrajectoryMPS", "classMergeMasterTrajectoryMPS.html", "classMergeMasterTrajectoryMPS" ],
     [ "MergeMPSTest", "classMergeMPSTest.html", "classMergeMPSTest" ],
-    [ "MockProblem", "classMockProblem.html", null ],
+    [ "MergeWeightsTrajectory", "classMergeWeightsTrajectory.html", null ],
     [ "MPSFileProblemProviderAdapter", "classMPSFileProblemProviderAdapter.html", null ],
     [ "MpsTxtWriterTest", "classMpsTxtWriterTest.html", null ],
+    [ "MultipleProblemGeneration", "classMultipleProblemGeneration.html", null ],
+    [ "MultipleProblemGenerationExeOptions", "classMultipleProblemGenerationExeOptions.html", null ],
+    [ "NodeLpDataLocation", "structNodeLpDataLocation.html", null ],
+    [ "NOOPBendersProblemProvider", "classNOOPBendersProblemProvider.html", null ],
     [ "NoopProblemGenerationLogger", "classNoopProblemGenerationLogger.html", "classNoopProblemGenerationLogger" ],
     [ "NOOPSolver", "classNOOPSolver.html", "classNOOPSolver" ],
+    [ "NOOPSolverForSubproblemWorker", "classNOOPSolverForSubproblemWorker.html", "classNOOPSolverForSubproblemWorker" ],
+    [ "NOOPSolverForWorker", "classNOOPSolverForWorker.html", "classNOOPSolverForWorker" ],
+    [ "NOOPSolverForWorkerMaster", "classNOOPSolverForWorkerMaster.html", "classNOOPSolverForWorkerMaster" ],
     [ "NotImplementedFeatureSolverException", "classNotImplementedFeatureSolverException.html", null ],
     [ "OptionsParser", "classOptionsParser.html", "classOptionsParser" ],
     [ "OptionsParserTest", "classOptionsParserTest.html", null ],
@@ -603,6 +527,8 @@ var annotated_dup =
     [ "OuterLoopInputFromYamlTest", "classOuterLoopInputFromYamlTest.html", null ],
     [ "OuterLoopPatternTest", "classOuterLoopPatternTest.html", null ],
     [ "Predicate", "structPredicate.html", null ],
+    [ "Presolve", "classPresolve.html", null ],
+    [ "PresolveOptions", "structPresolveOptions.html", null ],
     [ "Problem", "classProblem.html", "classProblem" ],
     [ "ProblemConstructionTest", "classProblemConstructionTest.html", null ],
     [ "ProblemData", "structProblemData.html", null ],
@@ -626,6 +552,7 @@ var annotated_dup =
     [ "RandomBatchShuffler", "classRandomBatchShuffler.html", null ],
     [ "RandomBatchShufflerTest", "classRandomBatchShufflerTest.html", null ],
     [ "RawPbData", "structRawPbData.html", null ],
+    [ "RenameUtils", "classRenameUtils.html", null ],
     [ "ScenarioToChronicleReader", "classScenarioToChronicleReader.html", null ],
     [ "SensitivityFileLogger", "classSensitivityFileLogger.html", null ],
     [ "SensitivityFileLoggerTest", "classSensitivityFileLoggerTest.html", null ],
@@ -650,6 +577,7 @@ var annotated_dup =
     [ "SimulationOptions", "classSimulationOptions.html", "classSimulationOptions" ],
     [ "SinglePbData", "structSinglePbData.html", null ],
     [ "SolverAbstract", "classSolverAbstract.html", "classSolverAbstract" ],
+    [ "SolverBaseOptions", "structSolverBaseOptions.html", null ],
     [ "SolverCbc", "classSolverCbc.html", "classSolverCbc" ],
     [ "SolverClp", "classSolverClp.html", "classSolverClp" ],
     [ "SolverConfig", "classSolverConfig.html", null ],
@@ -660,6 +588,7 @@ var annotated_dup =
     [ "SolverLogManager", "classSolverLogManager.html", null ],
     [ "SolverXpress", "classSolverXpress.html", "classSolverXpress" ],
     [ "StandardLp", "classStandardLp.html", null ],
+    [ "StructureGeneration", "classStructureGeneration.html", null ],
     [ "StudyUpdateLinkCapacitiesStrategy", "classStudyUpdateLinkCapacitiesStrategy.html", null ],
     [ "StudyUpdateLinkParameterStrategy", "classStudyUpdateLinkParameterStrategy.html", "classStudyUpdateLinkParameterStrategy" ],
     [ "StudyUpdater", "classStudyUpdater.html", "classStudyUpdater" ],
@@ -667,6 +596,7 @@ var annotated_dup =
     [ "StudyUpdateStrategy", "classStudyUpdateStrategy.html", "classStudyUpdateStrategy" ],
     [ "StudyUpdateTest", "classStudyUpdateTest.html", null ],
     [ "SubproblemWorker", "classSubproblemWorker.html", "classSubproblemWorker" ],
+    [ "SubproblemWorkerTest", "classSubproblemWorkerTest.html", null ],
     [ "TestForSolverAndExpectation", "classTestForSolverAndExpectation.html", null ],
     [ "TestForSolverAndMode", "classTestForSolverAndMode.html", null ],
     [ "Timer", "classTimer.html", null ],
@@ -680,14 +610,18 @@ var annotated_dup =
     [ "VariableNameComposition", "structVariableNameComposition.html", null ],
     [ "VariablesGroupTest", "classVariablesGroupTest.html", null ],
     [ "Version", "structVersion.html", null ],
+    [ "WeightFileProcessor", "classWeightFileProcessor.html", null ],
     [ "WeightsFileReader", "classWeightsFileReader.html", "classWeightsFileReader" ],
     [ "WeightsFileReaderTest", "classWeightsFileReaderTest.html", null ],
     [ "WeightsFileWriterTest", "classWeightsFileWriterTest.html", null ],
     [ "Worker", "classWorker.html", "classWorker" ],
     [ "WorkerMaster", "classWorkerMaster.html", "classWorkerMaster" ],
     [ "WorkerMasterData", "classWorkerMasterData.html", "classWorkerMasterData" ],
+    [ "WorkerMasterMock", "classWorkerMasterMock.html", "classWorkerMasterMock" ],
+    [ "WorkerMasterTest", "classWorkerMasterTest.html", null ],
     [ "WriterMockStatus", "classWriterMockStatus.html", null ],
     [ "XpansionProblemsFromAntaresProvider", "classXpansionProblemsFromAntaresProvider.html", null ],
+    [ "XpressManager", "classXpressManager.html", null ],
     [ "YearlyWeightsWriter", "classYearlyWeightsWriter.html", "classYearlyWeightsWriter" ],
     [ "ZipProblemProviderAdapter", "classZipProblemProviderAdapter.html", null ],
     [ "ZipProblemsProviderAdapter", "classZipProblemsProviderAdapter.html", null ]

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['launch_20the_20optimization_0',['Launch the optimization',['../md_docs_2user-guide_2get-started_2launching-optimization.html',1,'']]],
-  ['loading_20it_20dynamically_1',['Installing Xpress Solver and Loading it Dynamically',['../md_docs_2developer-guide_2install__from__sources_26-Xpress.html',1,'']]]
+  ['generation_0',['generation',['../md_docs_2developer-guide_2xpansion__steps_22-problem-modification.html',1,'Investment problem generation'],['../md_docs_2user-guide_2trajectory-investment_2multiple-problem-generation.html',1,'Multiple problem generation']]],
+  ['generation_20guidelines_1',['Documention generation guidelines',['../md_docs_2how__to.html',1,'']]],
+  ['guidelines_2',['Documention generation guidelines',['../md_docs_2how__to.html',1,'']]]
 ];

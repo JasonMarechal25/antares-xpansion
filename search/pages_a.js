@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['problem_0',['Mathematical aspects of the investment problem',['../md_docs_2user-guide_2optimization-principles_2problem-formalization.html',1,'']]],
-  ['problem_20generation_1',['Investment problem generation',['../md_docs_2developer-guide_2xpansion__steps_22-problem-modification.html',1,'']]],
-  ['problem_20in_20antares_20xpansion_2',['The optimal investment problem in Antares-Xpansion',['../md_docs_2user-guide_2optimization-principles_2investment-problem.html',1,'']]],
-  ['problem_20retrieval_3',['Antares optimization problem retrieval',['../md_docs_2developer-guide_2xpansion__steps_21-antares-solver-problem.html',1,'']]],
-  ['procedure_4',['Antares-Xpansion simulation procedure',['../md_docs_2developer-guide_2xpansion__steps_20-overview.html',1,'']]]
+  ['master_20problems_20of_20annual_20xpansion_20studies_0',['Merging the master problems of annual Xpansion studies',['../md_docs_2user-guide_2trajectory-investment_2merge-master.html',1,'']]],
+  ['mathematical_20aspects_20of_20the_20investment_20problem_1',['Mathematical aspects of the investment problem',['../md_docs_2user-guide_2optimization-principles_2problem-formalization.html',1,'']]],
+  ['merging_20the_20master_20problems_20of_20annual_20xpansion_20studies_2',['Merging the master problems of annual Xpansion studies',['../md_docs_2user-guide_2trajectory-investment_2merge-master.html',1,'']]],
+  ['multiple_20problem_20generation_3',['Multiple problem generation',['../md_docs_2user-guide_2trajectory-investment_2multiple-problem-generation.html',1,'']]]
 ];

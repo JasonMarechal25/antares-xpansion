@@ -139,6 +139,8 @@ $(function(){initNavTree('classWorkerMaster.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classWorkerMaster-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">WorkerMaster Class Reference</div></div>
 </div><!--header-->
@@ -149,18 +151,19 @@ Inheritance diagram for WorkerMaster:</div>
  <div class="center">
   <img src="classWorkerMaster.png" usemap="#WorkerMaster_map" alt=""/>
   <map id="WorkerMaster_map" name="WorkerMaster_map">
-<area href="classWorker.html" title="Mother-class Worker." alt="Worker" shape="rect" coords="0,0,92,24"/>
+<area href="classWorker.html" title="Mother-class Worker." alt="Worker" shape="rect" coords="0,0,123,24"/>
+<area href="classWorkerMasterMock.html" alt="WorkerMasterMock" shape="rect" coords="0,112,123,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9a726a561c540d6c9f90ff984f169eab" id="r_a9a726a561c540d6c9f90ff984f169eab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a726a561c540d6c9f90ff984f169eab">WorkerMaster</a> (const VariableMap &amp;variable_map, const std::filesystem::path &amp;path_to_mps, const std::string &amp;solver_name, int log_level, int subproblems_count, <a class="el" href="classSolverLogManager.html">SolverLogManager</a> &amp;solver_log_manager, bool mps_has_alpha, Logger logger, ProblemsFormat format)</td></tr>
-<tr class="memdesc:a9a726a561c540d6c9f90ff984f169eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a Master <a class="el" href="classProblem.html" title="Decorator to the SolverAbstract class.">Problem</a>.  <br /></td></tr>
-<tr class="separator:a9a726a561c540d6c9f90ff984f169eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accfd98c6107377016c56d00a242c5ec5" id="r_accfd98c6107377016c56d00a242c5ec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accfd98c6107377016c56d00a242c5ec5">get</a> (Point &amp;x0, double &amp;overall_subpb_cost_under_approx, DblVector &amp;single_subpb_costs_under_approx)</td></tr>
-<tr class="memdesc:accfd98c6107377016c56d00a242c5ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return optimal variables of a problem.  <br /></td></tr>
-<tr class="separator:accfd98c6107377016c56d00a242c5ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d1b5d3916f323d8e51448f82015046" id="r_ab9d1b5d3916f323d8e51448f82015046"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9d1b5d3916f323d8e51448f82015046">WorkerMaster</a> (const VariableMap &amp;variable_map, const std::string &amp;solver_name, int log_level, int subproblems_count, <a class="el" href="classSolverLogManager.html">SolverLogManager</a> &amp;solver_log_manager, bool mps_has_alpha, Logger logger, ProblemsFormat format, <a class="el" href="classIBendersProblemProvider.html">IBendersProblemProvider</a> *benders_problem_provider, double master_solution_tolerance, double cut_coefficient_tolerance)</td></tr>
+<tr class="memdesc:ab9d1b5d3916f323d8e51448f82015046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a Master <a class="el" href="classProblem.html" title="Decorator to the SolverAbstract class.">Problem</a>.  <br /></td></tr>
+<tr class="separator:ab9d1b5d3916f323d8e51448f82015046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f3621f598c5b3e8bdcb6e4679c1fb1" id="r_ae8f3621f598c5b3e8bdcb6e4679c1fb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8f3621f598c5b3e8bdcb6e4679c1fb1">get</a> (Point &amp;x0, double &amp;overall_subpb_cost_under_approx, DblVector &amp;single_subpb_costs_under_approx, DblVector &amp;master_only_vars_out)</td></tr>
+<tr class="memdesc:ae8f3621f598c5b3e8bdcb6e4679c1fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return optimal variables of a problem.  <br /></td></tr>
+<tr class="separator:ae8f3621f598c5b3e8bdcb6e4679c1fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d54999dd4bb88dea5124813f58d5b5f" id="r_a8d54999dd4bb88dea5124813f58d5b5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d54999dd4bb88dea5124813f58d5b5f">get_dual_values</a> (std::vector&lt; double &gt; &amp;dual) const</td></tr>
 <tr class="memdesc:a8d54999dd4bb88dea5124813f58d5b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set dual values of a problem in a vector.  <br /></td></tr>
 <tr class="separator:a8d54999dd4bb88dea5124813f58d5b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,9 +180,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>get_number_constraint<
 <tr class="memitem:a4e0985f5db67b527c238d9c78456347c" id="r_a4e0985f5db67b527c238d9c78456347c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e0985f5db67b527c238d9c78456347c">add_dynamic_cut</a> (const Point &amp;s, const double &amp;sx0, const double &amp;rhs) const</td></tr>
 <tr class="memdesc:a4e0985f5db67b527c238d9c78456347c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add benders cut to a problem.  <br /></td></tr>
 <tr class="separator:a4e0985f5db67b527c238d9c78456347c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3cfc0ba0e91b1eb6a41369ea11ed871" id="r_ac3cfc0ba0e91b1eb6a41369ea11ed871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3cfc0ba0e91b1eb6a41369ea11ed871">addSubproblemCut</a> (int i, const Point &amp;s, const Point &amp;x0, const double &amp;rhs) const</td></tr>
-<tr class="memdesc:ac3cfc0ba0e91b1eb6a41369ea11ed871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one benders cut to a problem.  <br /></td></tr>
-<tr class="separator:ac3cfc0ba0e91b1eb6a41369ea11ed871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7c04951f75b564dbf6a92a98a23a919" id="r_ad7c04951f75b564dbf6a92a98a23a919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7c04951f75b564dbf6a92a98a23a919">addSubproblemCut</a> (int i, const Point &amp;subgradient, const Point &amp;x_cut, const double &amp;rhs) const</td></tr>
+<tr class="memdesc:ad7c04951f75b564dbf6a92a98a23a919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one benders cut to a problem.  <br /></td></tr>
+<tr class="separator:ad7c04951f75b564dbf6a92a98a23a919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ba73f3af1fdcd14a61d66beca727a2" id="r_aa8ba73f3af1fdcd14a61d66beca727a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8ba73f3af1fdcd14a61d66beca727a2">addGroupSubproblemCut</a> (std::vector&lt; int &gt; subproblem_ids, const Point &amp;subgradient, const Point &amp;x_cut, const double &amp;rhs) const</td></tr>
+<tr class="memdesc:aa8ba73f3af1fdcd14a61d66beca727a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add benders cut to a problem.  <br /></td></tr>
+<tr class="separator:aa8ba73f3af1fdcd14a61d66beca727a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae76c047e796f3243fab131b12bdec4d5" id="r_ae76c047e796f3243fab131b12bdec4d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae76c047e796f3243fab131b12bdec4d5">fix_alpha</a> (const double &amp;bestUB) const</td></tr>
 <tr class="memdesc:ae76c047e796f3243fab131b12bdec4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fix an upper bound and the variable overall_subpb_cost_under_approx of a problem.  <br /></td></tr>
 <tr class="separator:ae76c047e796f3243fab131b12bdec4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,16 +195,22 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DeactivateInt
 <tr class="memitem:a512328893185e0c3ed8d3c57c54d44f5" id="r_a512328893185e0c3ed8d3c57c54d44f5"><td class="memItemLeft" align="right" valign="top"><a id="a512328893185e0c3ed8d3c57c54d44f5" name="a512328893185e0c3ed8d3c57c54d44f5"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ActivateIntegrityConstraints</b> () const</td></tr>
 <tr class="separator:a512328893185e0c3ed8d3c57c54d44f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2af857bd7eecfdd084f5ed254d639296" id="r_a2af857bd7eecfdd084f5ed254d639296"><td class="memItemLeft" align="right" valign="top"><a id="a2af857bd7eecfdd084f5ed254d639296" name="a2af857bd7eecfdd084f5ed254d639296"></a>
-virtual std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_id_nb_units</b> () const</td></tr>
-<tr class="separator:a2af857bd7eecfdd084f5ed254d639296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69de3544fec7ff32d6366656d00dd565" id="r_a69de3544fec7ff32d6366656d00dd565"><td class="memItemLeft" align="right" valign="top"><a id="a69de3544fec7ff32d6366656d00dd565" name="a69de3544fec7ff32d6366656d00dd565"></a>
+virtual std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_id_int_vars</b> () const</td></tr>
+<tr class="separator:a69de3544fec7ff32d6366656d00dd565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e264bbc10c6c8e97086cc7d578afac8" id="r_a6e264bbc10c6c8e97086cc7d578afac8"><td class="memItemLeft" align="right" valign="top"><a id="a6e264bbc10c6c8e97086cc7d578afac8" name="a6e264bbc10c6c8e97086cc7d578afac8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_id_alpha</b> (double id_alpha)</td></tr>
+<tr class="separator:a6e264bbc10c6c8e97086cc7d578afac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1eed38aef056e79a6f9313b920f8a6b" id="r_ae1eed38aef056e79a6f9313b920f8a6b"><td class="memItemLeft" align="right" valign="top"><a id="ae1eed38aef056e79a6f9313b920f8a6b" name="ae1eed38aef056e79a6f9313b920f8a6b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_id_single_subpb_costs_under_approx</b> (std::vector&lt; int &gt; id_single_subpb_costs_under_approx)</td></tr>
+<tr class="separator:ae1eed38aef056e79a6f9313b920f8a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classWorker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classWorker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classWorker.html">Worker</a></td></tr>
-<tr class="memitem:a99e2515abc23ec6bb1d84b19ca6a8e9f inherit pub_methods_classWorker" id="r_a99e2515abc23ec6bb1d84b19ca6a8e9f"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>Worker</b> (VariableMap variable_map, std::filesystem::path path_to_mps, Logger logger)</td></tr>
-<tr class="separator:a99e2515abc23ec6bb1d84b19ca6a8e9f inherit pub_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85328967d4e91eb3c1eef016db6f30a3 inherit pub_methods_classWorker" id="r_a85328967d4e91eb3c1eef016db6f30a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorker.html#a85328967d4e91eb3c1eef016db6f30a3">init</a> (const std::string &amp;solver_name, int log_level, <a class="el" href="classSolverLogManager.html">SolverLogManager</a> &amp;solver_log_manager, ProblemsFormat format)</td></tr>
-<tr class="memdesc:a85328967d4e91eb3c1eef016db6f30a3 inherit pub_methods_classWorker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of a problem.  <br /></td></tr>
-<tr class="separator:a85328967d4e91eb3c1eef016db6f30a3 inherit pub_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a03e30eb809fe6d6c756223c8b90f27 inherit pub_methods_classWorker" id="r_a7a03e30eb809fe6d6c756223c8b90f27"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>Worker</b> (VariableMap variable_map, Logger logger, double cut_coefficient_tolerance)</td></tr>
+<tr class="separator:a7a03e30eb809fe6d6c756223c8b90f27 inherit pub_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb29b6fca63283d104fe424cd2adbde inherit pub_methods_classWorker" id="r_a3cb29b6fca63283d104fe424cd2adbde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorker.html#a3cb29b6fca63283d104fe424cd2adbde">init</a> (const std::string &amp;solver_name, int log_level, const <a class="el" href="classSolverLogManager.html">SolverLogManager</a> &amp;solver_log_manager, ProblemsFormat format, <a class="el" href="classIBendersProblemProvider.html">IBendersProblemProvider</a> *benders_problem_provider)</td></tr>
+<tr class="memdesc:a3cb29b6fca63283d104fe424cd2adbde inherit pub_methods_classWorker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of a problem.  <br /></td></tr>
+<tr class="separator:a3cb29b6fca63283d104fe424cd2adbde inherit pub_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad144d280cf5f7bc86c80728f41f356fc inherit pub_methods_classWorker" id="r_ad144d280cf5f7bc86c80728f41f356fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorker.html#ad144d280cf5f7bc86c80728f41f356fc">get_value</a> (double &amp;lb) const</td></tr>
 <tr class="memdesc:ad144d280cf5f7bc86c80728f41f356fc inherit pub_methods_classWorker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the optimal value of a problem.  <br /></td></tr>
 <tr class="separator:ad144d280cf5f7bc86c80728f41f356fc inherit pub_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,12 +249,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddRows</b> (const st
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Getncols</b> () const</td></tr>
 <tr class="separator:a9efad509f7aedb046ee81c2ca21ab50c inherit pub_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aa55352f6a8fa1c7b20b5a376a619c6e5" id="r_aa55352f6a8fa1c7b20b5a376a619c6e5"><td class="memItemLeft" align="right" valign="top"><a id="aa55352f6a8fa1c7b20b5a376a619c6e5" name="aa55352f6a8fa1c7b20b5a376a619c6e5"></a>
+std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_id_master_only_vars</b></td></tr>
+<tr class="separator:aa55352f6a8fa1c7b20b5a376a619c6e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classWorker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classWorker')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classWorker.html">Worker</a></td></tr>
-<tr class="memitem:a98b805a5ec99f8cda8b6b02a396f8c0c inherit pub_attribs_classWorker" id="r_a98b805a5ec99f8cda8b6b02a396f8c0c"><td class="memItemLeft" align="right" valign="top">
-std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>_path_to_mps</b></td></tr>
-<tr class="separator:a98b805a5ec99f8cda8b6b02a396f8c0c inherit pub_attribs_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9c1b4f9bb71e1beb613eccad330219 inherit pub_attribs_classWorker" id="r_afd9c1b4f9bb71e1beb613eccad330219"><td class="memItemLeft" align="right" valign="top">
+std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><b>_base_filename</b></td></tr>
+<tr class="separator:afd9c1b4f9bb71e1beb613eccad330219 inherit pub_attribs_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a9104c18381ba2210d0220dc18310a3 inherit pub_attribs_classWorker" id="r_a1a9104c18381ba2210d0220dc18310a3"><td class="memItemLeft" align="right" valign="top">VariableMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorker.html#a1a9104c18381ba2210d0220dc18310a3">_name_to_id</a></td></tr>
 <tr class="separator:a1a9104c18381ba2210d0220dc18310a3 inherit pub_attribs_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdb60808816e1a3409a63fe0c2dd98b5 inherit pub_attribs_classWorker" id="r_abdb60808816e1a3409a63fe0c2dd98b5"><td class="memItemLeft" align="right" valign="top">Int2Str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorker.html#abdb60808816e1a3409a63fe0c2dd98b5">_id_to_name</a></td></tr>
@@ -255,10 +270,20 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_is_master</b> = fals
 <tr class="memitem:a4283154ad0c0e9066b62187960931a70 inherit pub_attribs_classWorker" id="r_a4283154ad0c0e9066b62187960931a70"><td class="memItemLeft" align="right" valign="top">
 Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></tr>
 <tr class="separator:a4283154ad0c0e9066b62187960931a70 inherit pub_attribs_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a9e893b84d5d3ed29d85524b48bc56605" id="r_a9e893b84d5d3ed29d85524b48bc56605"><td class="memItemLeft" align="right" valign="top"><a id="a9e893b84d5d3ed29d85524b48bc56605" name="a9e893b84d5d3ed29d85524b48bc56605"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>_set_master_only_var_ids</b> ()</td></tr>
+<tr class="separator:a9e893b84d5d3ed29d85524b48bc56605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classWorker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classWorker')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classWorker.html">Worker</a></td></tr>
+<tr class="memitem:a40b195699c27356f60b365142aa55f06 inherit pro_methods_classWorker" id="r_a40b195699c27356f60b365142aa55f06"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>roundIfWithinTolerance</b> (std::vector&lt; double &gt; &amp;values, int first, int last) const</td></tr>
+<tr class="separator:a40b195699c27356f60b365142aa55f06 inherit pro_methods_classWorker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9a726a561c540d6c9f90ff984f169eab" name="a9a726a561c540d6c9f90ff984f169eab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a726a561c540d6c9f90ff984f169eab">&#9670;&#160;</a></span>WorkerMaster()</h2>
+<a id="ab9d1b5d3916f323d8e51448f82015046" name="ab9d1b5d3916f323d8e51448f82015046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d1b5d3916f323d8e51448f82015046">&#9670;&#160;</a></span>WorkerMaster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,11 +292,6 @@ Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></t
           <td class="memname">WorkerMaster::WorkerMaster </td>
           <td>(</td>
           <td class="paramtype">const VariableMap &amp;</td>          <td class="paramname"><span class="paramname"><em>variable_map</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>path_to_mps</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -306,7 +326,22 @@ Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ProblemsFormat</td>          <td class="paramname"><span class="paramname"><em>format</em></span>&#160;)</td>
+          <td class="paramtype">ProblemsFormat</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classIBendersProblemProvider.html">IBendersProblemProvider</a> *</td>          <td class="paramname"><span class="paramname"><em>benders_problem_provider</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>master_solution_tolerance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>cut_coefficient_tolerance</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -441,8 +476,50 @@ Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></t
 
 </div>
 </div>
-<a id="ac3cfc0ba0e91b1eb6a41369ea11ed871" name="ac3cfc0ba0e91b1eb6a41369ea11ed871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3cfc0ba0e91b1eb6a41369ea11ed871">&#9670;&#160;</a></span>addSubproblemCut()</h2>
+<a id="aa8ba73f3af1fdcd14a61d66beca727a2" name="aa8ba73f3af1fdcd14a61d66beca727a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ba73f3af1fdcd14a61d66beca727a2">&#9670;&#160;</a></span>addGroupSubproblemCut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WorkerMaster::addGroupSubproblemCut </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>subproblem_ids</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;</td>          <td class="paramname"><span class="paramname"><em>x_cut</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add benders cut to a problem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group_alpha_i</td><td>: list of identifier of alphas </td></tr>
+    <tr><td class="paramname">s</td><td>: optimal slave variables </td></tr>
+    <tr><td class="paramname">x_cut</td><td>: subgradient </td></tr>
+    <tr><td class="paramname">rhs</td><td>: optimal slave value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7c04951f75b564dbf6a92a98a23a919" name="ad7c04951f75b564dbf6a92a98a23a919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7c04951f75b564dbf6a92a98a23a919">&#9670;&#160;</a></span>addSubproblemCut()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +532,7 @@ Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Point &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+          <td class="paramtype">const Point &amp;</td>          <td class="paramname"><span class="paramname"><em>subgradient</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -508,8 +585,8 @@ Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></t
 
 </div>
 </div>
-<a id="accfd98c6107377016c56d00a242c5ec5" name="accfd98c6107377016c56d00a242c5ec5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accfd98c6107377016c56d00a242c5ec5">&#9670;&#160;</a></span>get()</h2>
+<a id="ae8f3621f598c5b3e8bdcb6e4679c1fb1" name="ae8f3621f598c5b3e8bdcb6e4679c1fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f3621f598c5b3e8bdcb6e4679c1fb1">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -527,7 +604,12 @@ Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger_</b></td></t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DblVector &amp;</td>          <td class="paramname"><span class="paramname"><em>single_subpb_costs_under_approx</em></span>&#160;)</td>
+          <td class="paramtype">DblVector &amp;</td>          <td class="paramname"><span class="paramname"><em>single_subpb_costs_under_approx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DblVector &amp;</td>          <td class="paramname"><span class="paramname"><em>master_only_vars_out</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
