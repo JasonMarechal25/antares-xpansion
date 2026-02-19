@@ -1,10 +1,11 @@
-
-
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/benders_core")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/logger")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/benders_sequential")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/benders_by_batch")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/outer_loop")
+
+# Strategy pattern support - now the default implementation
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/strategy")
 
 
 add_subdirectory ("${CMAKE_CURRENT_SOURCE_DIR}/benders_mpi")

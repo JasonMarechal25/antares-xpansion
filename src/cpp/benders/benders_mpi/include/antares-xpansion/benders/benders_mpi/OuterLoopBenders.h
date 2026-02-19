@@ -1,4 +1,5 @@
 #pragma once
+#include "antares-xpansion/benders/benders_core/BendersAlgorithm.h"
 #include "antares-xpansion/benders/benders_core/BendersBase.h"
 #include "antares-xpansion/benders/benders_core/CriterionComputation.h"
 #include "antares-xpansion/benders/benders_core/CutsManagement.h"
@@ -27,6 +28,16 @@ public:
 
     void Run() override;
 
+    void set_algorithm(std::shared_ptr<BendersAlgorithm> algorithm)
+    {
+        algorithm_ = algorithm;
+    }
+
+    void free()
+    {
+        benders_->free();
+    }
+
     void OuterLoopCheckFeasibility() override;
     void OuterLoopBilevelChecks() override;
     void RunAttachedAlgo() override;
@@ -47,5 +58,6 @@ private:
     bool is_bilevel_check_all_ = false;
     void InitExternalValues(bool is_bilevel_check_all, double lambda);
     OuterLoopBiLevel outer_loop_biLevel_;
+    std::shared_ptr<BendersAlgorithm> algorithm_;
 };
 } // namespace Outerloop

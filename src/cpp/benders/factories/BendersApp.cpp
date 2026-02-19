@@ -1,4 +1,3 @@
-
 #include "antares-xpansion/benders/factories/BendersApp.h"
 
 #include <antares-xpansion/benders/factories/BendersFactory.h>
@@ -6,9 +5,14 @@
 #include <fmt/format.h>
 
 #include "antares-xpansion/benders/benders_by_batch/BendersByBatch.h"
+#include "antares-xpansion/benders/benders_core/BatchSubproblemSolver.h"
+#include "antares-xpansion/benders/benders_core/BendersAlgorithm.h"
 #include "antares-xpansion/benders/benders_core/CouplingMapGenerator.h"
 #include "antares-xpansion/benders/benders_core/MasterUpdate.h"
+#include "antares-xpansion/benders/benders_core/OuterLoopStrategy.h"
+#include "antares-xpansion/benders/benders_core/StandardSubproblemSolver.h"
 #include "antares-xpansion/benders/benders_core/StartUp.h"
+#include "antares-xpansion/benders/benders_mpi/MpiCommunication.h"
 #include "antares-xpansion/benders/benders_mpi/OuterLoopBenders.h"
 #include "antares-xpansion/benders/factories/LoggerFactories.h"
 #include "antares-xpansion/benders/factories/WriterFactories.h"
@@ -172,42 +176,33 @@ int BendersApp::RunExternalLoop()
                 AddCriterionOutputs();
             }
         }
-        double tau = 0.5;
-        const auto& outer_loop_inputs = std::get<Benders::Criterion::OuterLoopCriterionInputData>(
-          criterion_input_holder_);
-        std::shared_ptr<Outerloop::IMasterUpdate> master_updater = std::make_shared<
-          Outerloop::MasterUpdateBase>(benders_, tau, outer_loop_inputs.StoppingThreshold());
-        std::shared_ptr<Outerloop::ICutsManager>
-          cuts_manager = std::make_shared<Outerloop::CutsManagerRunTime>();
 
-        Outerloop::OuterLoopBenders ext_loop(outer_loop_inputs.Criteria(),
-                                             master_updater,
-                                             cuts_manager,
-                                             benders_,
-                                             *pworld_);
-        StartMessage();
-        ext_loop.Run();
-        EndMessage(ext_loop.Runtime());
+        if (benders_)
+        {
+            StartMessage();
+            benders_->launch();
+            EndMessage(benders_->execution_time());
+        }
     }
     catch (std::exception& e)
     {
         std::ostringstream msg;
         msg << "error: " << e.what() << std::endl;
         benders_loggers_.display_message(msg.str());
-        mpi::environment::abort(1);
+        boost::mpi::environment::abort(1);
     }
     catch (...)
     {
         std::ostringstream msg;
         msg << "Exception of unknown type!" << std::endl;
         benders_loggers_.display_message(msg.str());
-        mpi::environment::abort(1);
+        boost::mpi::environment::abort(1);
     }
     return 0;
 }
 
 BendersApp::BendersApp(const std::filesystem::path& options_file,
-                       mpi::communicator& world,
+                       boost::mpi::communicator& world,
                        const SOLVER& solver):
     pworld_(&world),
     solver_(solver),

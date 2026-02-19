@@ -3,6 +3,7 @@
 #include <antares-xpansion/benders/benders_core/BendersMethod.h>
 #include <antares-xpansion/benders/benders_core/CriterionInputDataReader.h>
 #include <antares-xpansion/benders/benders_core/common.h>
+#include <antares-xpansion/benders/strategy/IBendersCore.h>
 #include <memory>
 #include <optional>
 #include <variant>
@@ -24,12 +25,14 @@ class ILogger;
 class SimulationOptions;
 struct BendersBaseOptions;
 
+BENDERSMETHOD DeduceBendersMethod(size_t coupling_map_size, size_t batch_size, bool outer_loop);
+
 class BendersFactory
 {
 public:
     struct BendersEnvironment
     {
-        std::unique_ptr<BendersBase> benders{nullptr};
+        std::shared_ptr<IBendersCore> benders{nullptr};
         std::variant<Benders::Criterion::CriterionInputData,
                      Benders::Criterion::OuterLoopCriterionInputData>
           criterion_input_data;
@@ -57,7 +60,7 @@ private:
     ProcessCriterionInput();
     Benders::Criterion::CriterionInputData BuildPatternsUsingAreaFile();
     std::set<std::string> ReadAreaFile();
-    void ConfigureSolverLog(BendersBase* benders);
+    void ConfigureSolverLog(IBendersCore* benders);
 
     const SimulationOptions& options_;
     Dependencies dependencies_;

@@ -19,6 +19,7 @@ target_link_libraries(factories
         antaresXpansion::logger_lib
         ${PROJECT_NAME}::benders_mpi_core
         antaresXpansion::outer_loop_lib
+        antaresXpansion::benders_strategy
 )
 
 target_include_directories(factories

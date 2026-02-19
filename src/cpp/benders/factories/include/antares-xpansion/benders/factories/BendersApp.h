@@ -5,10 +5,29 @@
 
 #include "antares-xpansion/benders/benders_core/CriterionComputation.h"
 #include "antares-xpansion/benders/benders_core/common.h"
-#include "antares-xpansion/benders/benders_mpi/BendersMPI.h"
+#include "antares-xpansion/benders/strategy/IBendersCore.h"
+
+namespace boost
+{
+namespace mpi
+{
+class communicator;
+}
+} // namespace boost
 
 class BendersApp
 {
+public:
+    BendersApp(const std::filesystem::path& options_file,
+               boost::mpi::communicator& world,
+               const SOLVER& solver = SOLVER::BENDERS);
+    ~BendersApp() = default;
+
+    int Run();
+
+    std::filesystem::path LogReportsName() const;
+
+private:
     boost::mpi::communicator* pworld_ = nullptr;
     SOLVER solver_ = SOLVER::BENDERS;
     SimulationOptions options_;
@@ -16,7 +35,7 @@ class BendersApp
     std::variant<Benders::Criterion::CriterionInputData,
                  Benders::Criterion::OuterLoopCriterionInputData>
       criterion_input_holder_;
-    std::shared_ptr<BendersBase> benders_ = nullptr;
+    std::shared_ptr<IBendersCore> benders_ = nullptr;
     Logger logger_ = nullptr;
     std::shared_ptr<Output::OutputWriter> writer_ = nullptr;
     std::shared_ptr<MathLoggerDriver> math_log_driver_;
@@ -33,12 +52,6 @@ class BendersApp
     void AddCriterionOutputs();
     bool isCriterionListEmpty() const;
     void SetupLoggerAndOutputWriter(const BendersBaseOptions& benders_options);
-
-public:
-    explicit BendersApp(const std::filesystem::path& options_file,
-                        boost::mpi::communicator& world,
-                        const SOLVER& solver);
-    int Run();
-    std::filesystem::path LogReportsName() const;
 };
+
 #endif // ANTARES_XPANSION_SRC_CPP_BENDERS_FACTORIES_INCLUDE_BENDERSFACTORY_H

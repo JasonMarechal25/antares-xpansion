@@ -34,8 +34,12 @@ auto selectPolicy(lambda f, bool shouldParallelize)
     }
 }
 
+class BendersAlgorithm;
+
 class BendersBase
 {
+    friend class BendersAlgorithm;
+
 public:
     virtual ~BendersBase() = default;
     BendersBase(BendersBaseOptions options,
@@ -95,19 +99,61 @@ public:
     WorkerMasterData BestIterationWorkerMaster() const;
     void SetMasterObjectiveFunctionCoeffsToZeros() const;
     void SetMasterObjectiveFunction(const double* coeffs, int first, int last) const;
-    virtual void InitializeProblems() = 0;
-
-    void SetMaxIteration(int max_iteration)
-    {
-        _options.MAX_ITERATIONS = max_iteration;
-    }
 
     BendersBaseOptions Options() const
     {
         return _options;
     }
 
-    virtual void free() = 0;
+    virtual void InitializeProblems() = 0;
+
+    bool IsStop() const
+    {
+        return _data.stop;
+    }
+
+    void set_stop(bool stop)
+    {
+        _data.stop = stop;
+    }
+
+public:
+    virtual void free();
+
+    virtual void BuildCut()
+    {
+    }
+
+    virtual void solve_master()
+    {
+    }
+
+    virtual void check_convergence()
+    {
+    }
+
+    virtual Point get_master_x() const
+    {
+        return Point();
+    }
+
+    virtual void set_master_x(const Point& x)
+    {
+    }
+
+    CurrentIterationData& getCurrentIterationData()
+    {
+        return _data;
+    }
+
+    virtual void init_data();
+    void OpenCsvFile();
+    void CloseCsvFile();
+    virtual void SaveCurrentBendersData();
+    void update_best_ub();
+    virtual void UpdateTrace();
+    virtual void mathLoggerDriverWriteheader();
+    void LoggerLogAtIterationEnd();
 
     int GetBendersRunNumber() const
     {
@@ -119,7 +165,6 @@ public:
     CriteriaCurrentIterationData GetOuterLoopData() const;
 
     std::vector<double> GetOuterLoopCriterionAtBestBenders() const;
-    virtual void init_data();
     void init_data(double external_loop_lambda,
                    double external_loop_lambda_min,
                    double external_loop_lambda_max);
@@ -160,12 +205,10 @@ protected:
       int n_cuts) const;
 
     virtual void Run() = 0;
-    void update_best_ub();
     bool ShouldBendersStop();
     bool is_initial_relaxation_requested() const;
     bool SwitchToIntegerMaster(bool is_relaxed) const;
     virtual void HandleInitialMasterRelaxation();
-    virtual void UpdateTrace();
     virtual void ComputeXCut();
     void roundXCut();
     void ComputeInvestCost();
@@ -229,10 +272,7 @@ protected:
     void SaveCurrentIterationInOutputFile() const;
     void SaveSolutionInOutputFile() const;
     void PrintCurrentIterationCsv();
-    void OpenCsvFile();
-    void CloseCsvFile();
     void ChecksResumeMode();
-    virtual void SaveCurrentBendersData();
     void ClearCurrentIterationCutTrace();
     virtual void EndWritingInOutputFile() const;
 
@@ -288,7 +328,7 @@ protected:
     virtual void UpdateStoppingCriterion();
     virtual bool ShouldRelaxationStop() const;
 
-    int GetNumOfSubProblemsSolvedBeforeResume()
+    int GetNumOfSubProblemsSolvedBeforeResume() const
     {
         return cumulative_number_of_subproblem_resolved_before_resume;
     }

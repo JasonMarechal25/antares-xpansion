@@ -1283,6 +1283,16 @@ void BendersBase::ChecksResumeMode()
     }
 }
 
+void BendersBase::LoggerLogAtIterationEnd()
+{
+    _logger->log_at_iteration_end(bendersDataToLogData(_data));
+}
+
+void BendersBase::mathLoggerDriverWriteheader()
+{
+    mathLoggerDriver_->write_header();
+}
+
 void BendersBase::SaveCurrentBendersData()
 {
     LastIterationWriter last_iteration_writer(LastIterationFile());
@@ -1506,4 +1516,34 @@ void BendersBase::roundXCut()
             kvp.second = ub;
         }
     }
+}
+
+void BendersBase::free()
+{
+    // Default behaviour: free master and subproblems if they exist.
+    if (!master_is_empty_)
+    {
+        free_master();
+    }
+    free_subproblems();
+}
+
+LogData BendersBase::GetBestIterationData() const
+{
+    return best_iteration_data;
+}
+
+WorkerMasterDataVect BendersBase::AllCuts() const
+{
+    return workerMasterDataVect_;
+}
+
+int BendersBase::MasterRowIndex(const std::string& row_name) const
+{
+    if (master_is_empty_ || !_master)
+    {
+        return -1;
+    }
+    // Worker::RowIndex is non-const; call via const_cast on _master.get()
+    return const_cast<WorkerMaster*>(_master.get())->RowIndex(row_name);
 }

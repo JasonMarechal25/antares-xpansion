@@ -90,59 +90,31 @@ void BendersSequential::BuildCut()
  *
  *  Method to run BendersSequential algorithm
  */
-void BendersSequential::Run()
+void BendersSequential::solve_master()
 {
-    init_data();
-    ChecksResumeMode();
-    if (is_trace())
-    {
-        OpenCsvFile();
-    }
-
-    HandleInitialMasterRelaxation();
-
-    while (!_data.stop)
-    {
-        Timer timer_master;
-        ++_data.it;
-
-        if (SwitchToIntegerMaster(_data.is_in_initial_relaxation))
-        {
-            _logger->LogAtSwitchToInteger();
-            ActivateIntegrityConstraints();
-            ResetDataPostRelaxation();
-        }
-
-        _logger->log_at_initialization(_data.it + GetNumIterationsBeforeRestart());
-        _logger->display_message("\tSolving master...");
-        get_master_value();
-        _logger->log_master_solving_duration(_data.timer_master);
-
-        ComputeXCut();
-        _logger->log_iteration_candidates(bendersDataToLogData(_data));
-
-        _logger->display_message("\tSolving subproblems...");
-        BuildCut();
-        _logger->LogSubproblemsSolvingWalltime(_data.subproblems_walltime);
-
-        compute_ub();
-        update_best_ub();
-
-        _logger->log_at_iteration_end(bendersDataToLogData(_data));
-
-        UpdateTrace();
-
-        _data.timer_master = timer_master.elapsed();
-        _data.iteration_time = -_data.benders_time;
-        _data.benders_time = GetBendersTime();
-        _data.iteration_time += _data.benders_time;
-        _data.stop = ShouldBendersStop();
-        SaveCurrentBendersData();
-    }
-    CloseCsvFile();
-    EndWritingInOutputFile();
-    write_basis();
+    get_master_value();
 }
+
+void BendersSequential::check_convergence()
+{
+    _data.stop = ShouldBendersStop();
+}
+
+Point BendersSequential::get_master_x() const
+{
+    return get_x_cut();
+}
+
+void BendersSequential::set_master_x(const Point& x)
+{
+    // In sequential, master_x is already in _data.x_cut after ComputeXCut
+    // This is more relevant for MPI where rank != 0 needs to receive it.
+}
+
+#include "antares-xpansion/benders/benders_core/BendersAlgorithm.h"
+#include "antares-xpansion/benders/benders_core/NoOuterLoopStrategy.h"
+#include "antares-xpansion/benders/benders_core/StandardSubproblemSolver.h"
+#include "antares-xpansion/benders/benders_sequential/SequentialCommunication.h"
 
 void BendersSequential::launch()
 {
@@ -153,7 +125,16 @@ void BendersSequential::launch()
     _logger->display_message("Running solver...");
     try
     {
-        Run();
+        auto comm = std::make_shared<SequentialCommunication>();
+        auto benders_ptr = std::shared_ptr<BendersBase>(this, [](BendersBase*) {});
+        auto solver = std::make_shared<StandardSubproblemSolver>(benders_ptr);
+
+        auto algorithm = std::make_shared<BendersAlgorithm>(comm, solver, nullptr, benders_ptr);
+        auto no_outer_loop = std::make_shared<NoOuterLoopStrategy>([algorithm]()
+                                                                   { algorithm->MasterLoop(); });
+        algorithm->set_outer_loop(no_outer_loop);
+
+        algorithm->Run();
         _logger->display_message(BendersName() + " solver terminated.");
     }
     catch (const std::exception& ex)
@@ -164,4 +145,10 @@ void BendersSequential::launch()
 
     post_run_actions();
     free();
+}
+
+void BendersSequential::Run()
+{
+    // Delegate to launch() which handles the full sequential algorithm
+    launch();
 }
