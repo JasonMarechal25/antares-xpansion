@@ -365,18 +365,28 @@ void BendersMpi::write_exception_message(const std::exception& ex) const
 
 void BendersMpi::step_4_update_best_solution(int rank)
 {
-    if (rank == rank_0)
+    int success = 1;
+    try
     {
-        compute_ub();
-        update_best_ub();
-        _logger->log_at_iteration_end(bendersDataToLogData(_data));
+        if (rank == rank_0)
+        {
+            compute_ub();
+            update_best_ub();
+            _logger->log_at_iteration_end(bendersDataToLogData(_data));
 
-        UpdateTrace();
-        _data.iteration_time = -_data.benders_time;
-        _data.benders_time = GetBendersTime();
-        _data.iteration_time += _data.benders_time;
-        _data.stop = ShouldBendersStop();
+            UpdateTrace();
+            _data.iteration_time = -_data.benders_time;
+            _data.benders_time = GetBendersTime();
+            _data.iteration_time += _data.benders_time;
+            _data.stop = ShouldBendersStop();
+        }
     }
+    catch (const std::exception& ex)
+    {
+        success = 0;
+        write_exception_message(ex);
+    }
+    check_if_some_proc_had_a_failure(success);
 }
 
 /*!
