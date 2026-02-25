@@ -10,7 +10,21 @@ void BendersByBatch::InitializeProblems()
 {
     MatchProblemToId();
 
-    BuildMasterProblem();
+    int success = 1;
+    try
+    {
+        BuildMasterProblem();
+    }
+    catch (const std::exception& ex)
+    {
+        success = 0;
+        write_exception_message(ex);
+    }
+    check_if_some_proc_had_a_failure(success);
+    if (exception_raised_)
+    {
+        return;
+    }
 
     const auto& coupling_map_size = coupling_map_.size();
     // Only rank 0 builds the batch collection, then it is broadcasted to all procs
@@ -131,16 +145,30 @@ void BendersByBatch::MasterLoop()
         SetSubproblemCost(0);
         remaining_epsilon_ = Gap();
 
+        int success = 1;
         if (Rank() == rank_0)
         {
-            _logger->PrintIterationSeparatorBegin();
+            try
+            {
+                _logger->PrintIterationSeparatorBegin();
 
-            _logger->display_message("\tSolving master...");
-            get_master_value();
-            _logger->log_master_solving_duration(_data.timer_master);
+                _logger->display_message("\tSolving master...");
+                get_master_value();
+                _logger->log_master_solving_duration(_data.timer_master);
 
-            random_batch_permutation_ = RandomBatchShuffler(number_of_batch_)
-                                          .GetCyclicBatchOrder(current_batch_id_);
+                random_batch_permutation_ = RandomBatchShuffler(number_of_batch_)
+                                              .GetCyclicBatchOrder(current_batch_id_);
+            }
+            catch (const std::exception& ex)
+            {
+                success = 0;
+                write_exception_message(ex);
+            }
+        }
+        check_if_some_proc_had_a_failure(success);
+        if (exception_raised_)
+        {
+            break;
         }
         BroadcastXOut();
         BroadcastSingleSubpbCostsUnderApprox();
