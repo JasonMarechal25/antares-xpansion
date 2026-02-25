@@ -29,7 +29,21 @@ BendersMpi::BendersMpi(const BendersBaseOptions& options,
 void BendersMpi::InitializeProblems()
 {
     MatchProblemToId();
-    BuildMasterProblem();
+    int success = 1;
+    try
+    {
+        BuildMasterProblem();
+    }
+    catch (const std::exception& ex)
+    {
+        success = 0;
+        write_exception_message(ex);
+    }
+    check_if_some_proc_had_a_failure(success);
+    if (exception_raised_)
+    {
+        return;
+    }
     if (_options.CACHE_PROBLEMS)
     {
         int current_problem_id = 0;
@@ -470,6 +484,11 @@ void BendersMpi::launch()
         InitializeProblems();
     }
     _world.barrier();
+
+    if (exception_raised_)
+    {
+        return;
+    }
 
     Run();
     _world.barrier();
