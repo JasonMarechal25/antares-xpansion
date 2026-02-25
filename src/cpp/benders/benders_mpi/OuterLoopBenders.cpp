@@ -89,20 +89,30 @@ void OuterLoopBenders::OuterLoopCheckFeasibility()
     }
 
     benders_->launch();
+
+    int criterion_satisfied = 1;
     if (world_.rank() == 0)
     {
         benders_->SetMasterObjectiveFunction(obj_coeff.data(), 0, obj_coeff.size() - 1);
         benders_->UpdateOverallCosts();
         OuterLoopBilevelChecks();
-        if (!outer_loop_biLevel_.FoundFeasible())
+        if (outer_loop_biLevel_.FoundFeasible())
         {
-            std::ostringstream err_msg;
-            err_msg << PrefixMessage(LogUtils::LOGLEVEL::FATAL, "Outer Loop")
-                    << "Criterion cannot be satisfied for your study\n";
-            throw CriterionCouldNotBeSatisfied(err_msg.str(), LOGLOCATION);
+            InitExternalValues(false, 0.0);
         }
+        else
+        {
+            criterion_satisfied = 0;
+        }
+    }
 
-        InitExternalValues(false, 0.0);
+    mpi::broadcast(world_, criterion_satisfied, 0);
+    if (!criterion_satisfied)
+    {
+        std::ostringstream err_msg;
+        err_msg << PrefixMessage(LogUtils::LOGLEVEL::FATAL, "Outer Loop")
+                << "Criterion cannot be satisfied for your study\n";
+        throw CriterionCouldNotBeSatisfied(err_msg.str(), LOGLOCATION);
     }
 }
 
